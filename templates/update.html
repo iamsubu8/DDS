@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <div>
+        <form action="/update/{{folder.id}}" method="post">
+            {%csrf_token%}
+            <input type="text" value="{{folder.name}}" name='name'>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+</body>
+</html>

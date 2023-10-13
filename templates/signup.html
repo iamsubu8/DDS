@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .container form label, .container form input {
+            margin: 10px 0;
+        }
+        .container form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .container form input[type="submit"] {
+            background: #007BFF;
+            color: #fff;
+            border: 0;
+            border-radius: 3px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button2 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+        .error{
+            text-align: center;
+            color: #d13a3a;
+        } 
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        .footer-content {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Your Account</h2>
+        <div class="error">{{error_message}}</div>
+        <form action="signup" method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text"  name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email"  name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="text"  name="psw1" required>
+
+            <label for="confirm password">Password:</label>
+            <input type="text"  name="pasw2" required>
+
+            <button class="button button2" type="submit">Sign Up</button>
+        </form>
+    </div>
+    <div>
+        <footer>
+            <div class="footer-content">
+                <p>Designed and developed by Subramanyam</p>
+            </div>
+    </footer>
+    </div>
+</body>
+</html>
